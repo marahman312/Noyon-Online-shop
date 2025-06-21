@@ -4,31 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>আমার অনলাইন কাপড়ের দোকান</title>
+  <title>নয়ন অনলাইন শপ</title>
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
+      background-color: #f9f9f9;
     }
-    header {
+    header, footer {
       background-color: #343a40;
       color: white;
       text-align: center;
       padding: 1rem;
     }
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
       padding: 2rem;
     }
     .product {
       background: white;
       border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       padding: 1rem;
+      width: 250px;
       text-align: center;
     }
     .product img {
@@ -36,48 +38,66 @@
       height: auto;
       border-radius: 8px;
     }
-    .product button {
-      margin-top: 0.5rem;
-      background-color: #28a745;
+    form {
+      background: #fff;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #28a745;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      padding: 0.7rem 1.2rem;
       cursor: pointer;
-    }
-    footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>আমার অনলাইন কাপড়ের দোকান</h1>
+    <h1>নয়ন অনলাইন শপ</h1>
   </header>
 
   <section class="products">
     <div class="product">
       <img src="https://via.placeholder.com/250x300" alt="শাড়ি">
       <h2>মসলিন শাড়ি</h2>
-      <p>মূল্য: ১৫০০ টাকা</p>
-      <button onclick="alert('অর্ডার গ্রহণ করা হয়েছে!')">অর্ডার করুন</button>
+      <p>৳১৫০০</p>
     </div>
     <div class="product">
       <img src="https://via.placeholder.com/250x300" alt="পাঞ্জাবি">
       <h2>সুতি পাঞ্জাবি</h2>
-      <p>মূল্য: ৯৫০ টাকা</p>
-      <button onclick="alert('অর্ডার গ্রহণ করা হয়েছে!')">অর্ডার করুন</button>
+      <p>৳৯৫০</p>
     </div>
   </section>
 
+  <form>
+    <h3>অর্ডার করুন</h3>
+    <input type="text" name="name" placeholder="আপনার নাম" required>
+    <input type="text" name="phone" placeholder="ফোন নম্বর" required>
+    <textarea name="address" placeholder="ঠিকানা" required></textarea>
+    <select name="payment" required>
+      <option value="">-- পেমেন্ট পদ্ধতি নির্বাচন করুন --</option>
+      <option value="bkash">বিকাশ</option>
+      <option value="nagad">নগদ</option>
+      <option value="cod">ক্যাশ অন ডেলিভারি</option>
+    </select>
+    <button type="submit" onclick="alert('আপনার অর্ডার গ্রহণ করা হয়েছে!')">অর্ডার করুন</button>
+  </form>
+
   <footer>
-    <p>© ২০২৫ - আমার কাপড়ের দোকান</p>
+    <p>© ২০২৫ নয়ন অনলাইন শপ</p>
   </footer>
 </body>
 </html>
